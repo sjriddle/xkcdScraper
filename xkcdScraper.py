@@ -23,7 +23,7 @@ while not url.endswith('#'):
         res = requests.get(comicUrl)
         res.raise_for_status()
 
-    # Save the image to ./xkcd
+    # Save the image to ./xkcd folder
     imageFile = open(os.path.join('xkcd', os.path.basename(comicUrl)), 'wb')
     for chunk in res.iter_content(100000):
         imageFile.write(chunk)
